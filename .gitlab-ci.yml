@@ -1,0 +1,9 @@
+stages:
+  - test
+
+bash_syntax_check:
+  stage: test
+  image: ubuntu:24.04
+  script:
+    - bash -n monitor.sh
+    - echo "Bash syntax check passed!"
