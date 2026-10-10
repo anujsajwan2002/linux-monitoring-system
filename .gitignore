@@ -1,0 +1,6 @@
+# Generated monitoring logs
+logs/*.log
+
+# Temporary files
+*.tmp
+*.swp
