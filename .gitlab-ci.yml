@@ -4,6 +4,12 @@ stages:
 bash_syntax_check:
   stage: test
   image: ubuntu:24.04
+  before_script:
+    - apt-get update -qq
+    - apt-get install -y -qq bash shellcheck
   script:
+    - echo "Checking Bash syntax..."
     - bash -n monitor.sh
-    - echo "Bash syntax check passed!"
+    - echo "Running ShellCheck..."
+    - shellcheck monitor.sh
+    - echo "All checks passed!"
